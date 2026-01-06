@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD 11) # Requires C11 standard
 
 add_subdirectory(src)
 
+add_executable(${PROJECT_NAME} WIN32)
+
 target_link_libraries(${PROJECT_NAME} raylib)
 
 # Checks if OSX and links appropriate frameworks (only required on MacOS)
