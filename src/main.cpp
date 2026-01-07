@@ -20,6 +20,8 @@ int main() {
 
                 player.draw();
 
+                DrawFPS(0, 0);
+
                 EndDrawing();
         }
 
