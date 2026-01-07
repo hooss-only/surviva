@@ -28,6 +28,7 @@ Texture2D* useTexture(const char* sourcePath) {
                 }
         }
 
+        TraceLog(LOG_WARNING, "REACHED MAXIMUM TEXTURE AMOUNT!!");
         return NULL;
 }
 
