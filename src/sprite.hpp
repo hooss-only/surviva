@@ -9,7 +9,7 @@ class Sprite {
                 virtual void draw();
                 virtual void update(float dt);
 
-        private:
+        protected:
                 Texture2D* texture;
                 Vector2 position;
 };
