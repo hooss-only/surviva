@@ -3,8 +3,10 @@
 
 #include <raylib.h>
 
+
 Player::Player() : Sprite() {
         this->texture = useTexture("assets/player.png");
+        this->speed = 200;
 }
 
 Player::~Player() {
@@ -23,4 +25,32 @@ void Player::draw() {
 }
 
 void Player::update(float dt) {
+        this->move();
+        this->position.x += this->velocity.x * dt;
+        this->position.y += this->velocity.y * dt;
+}
+
+void Player::move() {
+        Vector2 weight = { 0 };
+        if (IsKeyDown(KEY_A)) {
+                weight.x--;
+        }
+        if (IsKeyDown(KEY_D)) {
+                weight.x++;
+        }
+        if (IsKeyDown(KEY_W)) {
+                weight.y--;
+        }
+        if (IsKeyDown(KEY_S)) {
+                weight.y++;
+        }
+
+        int modified = speed;
+        if (weight.x * weight.y != 0) {
+                modified /= 1.414;
+
+        }
+
+        this->velocity.x = modified * weight.x;
+        this->velocity.y = modified * weight.y;
 }

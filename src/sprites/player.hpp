@@ -12,4 +12,9 @@ class Player : private Sprite {
 
         private:
                 Texture2D* texture;
+
+                Vector2 velocity;
+                int speed;
+
+                void move();
 };
