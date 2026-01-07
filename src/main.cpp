@@ -1,6 +1,7 @@
 #include <raylib.h>
 
 #include "resources/texture.hpp"
+#include "scene.hpp"
 #include "sprites/player.hpp"
 
 int main() {
@@ -8,17 +9,19 @@ int main() {
 
         SetTraceLogLevel(LOG_ALL);
         
-        Player player;
+        Scene scene;
+        scene.add_sprite(new Player());
 
         float dt = GetFrameTime();
+        SetTargetFPS(60);
         while (!WindowShouldClose()) {
                 dt = GetFrameTime();
-                player.update(dt);
+                scene.update(dt);
 
                 BeginDrawing();
                 ClearBackground(DARKGRAY);
 
-                player.draw();
+                scene.draw();
 
                 DrawFPS(0, 0);
 

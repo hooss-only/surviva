@@ -2,7 +2,7 @@
 
 #include "../sprite.hpp"
 
-class Player : private Sprite {
+class Player : public Sprite {
         public:
                 Player();
                 ~Player();
@@ -11,8 +11,6 @@ class Player : private Sprite {
                 void update(float dt) override;
 
         private:
-                Texture2D* texture;
-
                 Vector2 velocity;
                 int speed;
 
