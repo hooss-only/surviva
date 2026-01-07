@@ -20,7 +20,8 @@ Texture2D* useTexture(const char* sourcePath) {
         for (int i=0; i<MAX_TEXTURE_AMOUNT; i++) {
                 if (textureResources[i].userAmount == 0) {
                         textureResources[i].userAmount++;
-                        textureResources[i].sourcePath = (char*) malloc(sizeof(char) * strlen(sourcePath));
+                        textureResources[i].sourcePath = 
+                                (char*) malloc(sizeof(char) * strlen(sourcePath));
                         strcpy(textureResources[i].sourcePath, sourcePath);
                         textureResources[i].texture = LoadTexture(sourcePath);
                         return &textureResources[i].texture;
