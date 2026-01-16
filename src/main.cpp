@@ -13,7 +13,7 @@ int main() {
         scene.add_sprite(new Player());
 
         float dt = GetFrameTime();
-        SetTargetFPS(60);
+        SetTargetFPS(120);
         while (!WindowShouldClose()) {
                 dt = GetFrameTime();
                 scene.update(dt);
