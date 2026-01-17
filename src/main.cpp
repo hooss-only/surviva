@@ -3,6 +3,7 @@
 #include "resources/texture.hpp"
 #include "scene.hpp"
 #include "sprites/player.hpp"
+#include "sprites/chest.hpp"
 
 int main() {
         InitWindow(1200, 600, "surviva");
@@ -11,6 +12,7 @@ int main() {
         
         Scene scene;
         scene.add_sprite(new Player());
+        scene.add_sprite(new Chest());
 
         float dt = GetFrameTime();
         SetTargetFPS(120);
