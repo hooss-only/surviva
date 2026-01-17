@@ -7,6 +7,7 @@
 Player::Player() : Entity() {
         this->texture = useTexture("assets/player.png");
         this->speed = 200;
+        this->middle_point = 10 * 4;
 }
 
 Player::~Player() {

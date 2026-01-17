@@ -4,6 +4,7 @@
 
 Chest::Chest() : Entity() {
         this->texture = useTexture("assets/chest.png");
+        this->middle_point = 5 * 4;
 }
 
 Chest::~Chest() {

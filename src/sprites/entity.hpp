@@ -7,7 +7,7 @@ class Entity: public Sprite {
                 Entity();
                 ~Entity();
 
-        private:
+        protected:
                 Rectangle hitbox;
                 int middle_point;
 };
