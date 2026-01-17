@@ -4,7 +4,7 @@
 #include <raylib.h>
 
 
-Player::Player() : Sprite() {
+Player::Player() : Entity() {
         this->texture = useTexture("assets/player.png");
         this->speed = 200;
 }

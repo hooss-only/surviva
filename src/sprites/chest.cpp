@@ -2,7 +2,7 @@
 
 #include "../resources/texture.hpp"
 
-Chest::Chest() : Sprite() {
+Chest::Chest() : Entity() {
         this->texture = useTexture("assets/chest.png");
 }
 

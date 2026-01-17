@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../sprite.hpp"
+#include "entity.hpp"
 
-class Player : public Sprite {
+class Player : public Entity {
         public:
                 Player();
                 ~Player();

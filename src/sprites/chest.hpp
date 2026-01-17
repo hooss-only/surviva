@@ -1,6 +1,6 @@
-#include "../sprite.hpp"
+#include "entity.hpp"
 
-class Chest: public Sprite {
+class Chest: public Entity {
         public:
                 Chest();
                 ~Chest();
