@@ -1,0 +1,2 @@
+# 🪵 Surviva
+Simple survival game
