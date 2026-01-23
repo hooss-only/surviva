@@ -1,10 +1,9 @@
 #include <SDL3/SDL.h>
-#include <iostream>
 #include "game_status.h"
 
 int initialize_window() {
         if (!SDL_Init(SDL_INIT_VIDEO)) {
-                std::cout << "SDL_Init error" << std::endl;
+                SDL_LogError(1, "SDL_Init error.");
                 return 1;
         }
 
@@ -14,13 +13,13 @@ int initialize_window() {
                 0
         ));
         if (get_window() == NULL) {
-                std::cout << "Window creation error" << std::endl;
+                SDL_LogError(1, "Window creation error.");
                 return 1;
         }
 
         set_renderer(SDL_CreateRenderer(get_window(), NULL));
         if (get_renderer() == NULL) {
-                std::cout << "Renderer creation error" << std::endl;
+                SDL_LogError(1, "Window renderer error.");
                 return 1;
         }
 
