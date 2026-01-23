@@ -34,14 +34,20 @@ int main() {
         if (initialize_window())  return 1;
 
         DummySprite sprite;
-
+        
+        Uint64 freq = SDL_GetPerformanceFrequency();
+        Uint64 last = SDL_GetPerformanceCounter();
         while (!game_should_close()) {
+                Uint64 now = SDL_GetPerformanceCounter();
+                double dt = (double) (now - last) / (double) freq;
+                last = now;
+
                 SDL_Event event;
                 while (SDL_PollEvent(&event)) {
                         if (event.type == SDL_EVENT_QUIT) set_game_should_close(true);
                 }
                 
-                sprite.update(0.1);
+                sprite.update(dt);
 
                 SDL_RenderClear(get_renderer());
                 sprite.render();
