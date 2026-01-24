@@ -72,5 +72,8 @@ void unuse_texture(SDL_Texture* texture) {
                 index++;
         }
 
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "The texture to unuse is not available with texture manager.");
+        SDL_LogWarn(
+                SDL_LOG_CATEGORY_APPLICATION, 
+                "The texture to unuse is not available with texture manager."
+        );
 }
