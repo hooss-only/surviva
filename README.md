@@ -8,3 +8,4 @@ Go to my project root directory and run this:<br>
 cmake -S . -B build
 cmake --build build
 ```
+Then you can find executable file `build/surviva`.<br>
