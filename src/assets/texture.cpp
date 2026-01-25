@@ -43,6 +43,8 @@ SDL_Texture* use_texture(const std::string path) {
                 1
         };
 
+        SDL_SetTextureScaleMode(slot.texture, SDL_SCALEMODE_NEAREST);
+
         if (!slot.texture) {
                 SDL_LogError(
                         SDL_LOG_CATEGORY_APPLICATION,
