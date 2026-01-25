@@ -5,6 +5,9 @@ Sprite::Sprite() {
         this->should_delete = false;
 }
 
+void Sprite::update(double dt) {
+};
+
 void Sprite::render() {
         if (texture) texture->render(this->position);
 };
@@ -15,4 +18,8 @@ bool Sprite::get_should_delete() {
 
 void Sprite::set_should_delete(bool value) {
         this->should_delete = value;
+}
+
+SDL_FPoint Sprite::get_position() {
+        return { this->position.x, this->position.y };
 }

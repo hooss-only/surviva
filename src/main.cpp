@@ -2,8 +2,7 @@
 #include <SDL3_image/SDL_image.h>
 
 #include "game_status.hpp"
-#include "scene.hpp"
-#include "sprites/player.hpp"
+#include "scenes/topview.hpp"
 
 int initialize_window() {
         if (!SDL_Init(SDL_INIT_VIDEO)) {
@@ -38,8 +37,7 @@ int main() {
 
         set_sprite_scale(4);
 
-        set_scene(new Scene());
-        get_scene()->add_sprite(new Player());
+        set_scene(new TopView());
         
         Uint64 freq = SDL_GetPerformanceFrequency();
         Uint64 last = SDL_GetPerformanceCounter();

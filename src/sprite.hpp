@@ -10,10 +10,12 @@ class Sprite {
                 Sprite();
                 virtual ~Sprite() = default;
                 
-                virtual void update(double dt) = 0;
+                virtual void update(double dt);
                 virtual void render();
                 void set_should_delete(bool value);
                 bool get_should_delete();
+
+                SDL_FPoint get_position();
 
         protected:
                 SDL_FPoint position;
