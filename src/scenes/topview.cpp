@@ -1,14 +1,8 @@
 #include "topview.hpp"
 
-#include "../game_status.hpp"
-#include "../sprites/player.hpp"
-#include "../sprites/dummy.hpp"
-
 #include <algorithm>
 
 TopView::TopView() {
-        add_entity(new Player());
-        add_entity(new Dummy());
 }
 
 TopView::~TopView() {
