@@ -4,6 +4,8 @@
 
 Player::Player() {
         this->texture->set_texture(use_texture("assets/player.png"));
+
+        this->middle_point = 12;
 }
 
 void Player::update(double dt) {
