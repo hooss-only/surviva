@@ -36,6 +36,8 @@ int initialize_window() {
 int main() {
         if (initialize_window())  return 1;
 
+        set_sprite_scale(4);
+
         set_scene(new Scene());
         get_scene()->add_sprite(new Player());
         

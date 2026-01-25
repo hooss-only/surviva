@@ -31,6 +31,14 @@ Scene* get_scene() {
         return game_status.current_scene;
 }
 
+void set_sprite_scale(int scale) {
+        game_status.scale = scale;
+}
+
+int get_sprite_scale() {
+        return game_status.scale;
+}
+
 void set_game_should_close(bool should_close) {
         game_status.should_close = should_close;
 }
