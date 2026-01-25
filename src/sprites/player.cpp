@@ -3,7 +3,7 @@
 #include "../assets/texture.hpp"
 
 Player::Player() {
-        this->texture->set_texture(use_texture("assets/apple.png"));
+        this->texture->set_texture(use_texture("assets/player.png"));
 }
 
 void Player::update(double dt) {
