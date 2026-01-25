@@ -10,6 +10,5 @@ class Entity : public Sprite {
         protected:
                 SDL_FPoint velocity;
                 int hp, max_hp;
-                int middle_point;
                 int speed;
 };
