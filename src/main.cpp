@@ -55,7 +55,7 @@ int main() {
                 if (!get_scene()) continue;
 
                 get_scene()->update(dt);
-                
+
                 SDL_RenderClear(get_renderer());
                 get_scene()->render();
                 SDL_RenderPresent(get_renderer());

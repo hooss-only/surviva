@@ -4,6 +4,6 @@
 #include "../sprites/dummy.hpp"
 
 TestScene::TestScene() {
-        this->add_entity(new Player());
-        this->add_entity(new Dummy());
+        this->add_sprite(new Player());
+        this->add_sprite(new Dummy());
 }

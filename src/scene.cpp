@@ -46,6 +46,7 @@ void Scene::process_hovering() {
         SDL_GetMouseState(&mouse.x, &mouse.y);
         for (Sprite* sprite: this->sprites) {
                 auto* clickable = dynamic_cast<Clickable*>(sprite);
+                if (!clickable) continue;
 
                 SDL_FRect p = clickable->get_click_box();
                 if (p.x >= mouse.x &&
