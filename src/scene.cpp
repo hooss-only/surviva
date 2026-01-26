@@ -49,11 +49,11 @@ void Scene::process_hovering() {
                 if (!clickable) continue;
 
                 SDL_FRect p = clickable->get_click_box();
-                if (p.x >= mouse.x &&
-                        p.x + p.w <= mouse.x &&
-                        p.y >= mouse.y &&
+                if (p.x <= mouse.x &&
+                        p.x + p.w >= mouse.x &&
+                        p.y <= mouse.y &&
                         p.y + p.h >= mouse.y) {
-                        
+
                         set_cursor_hovering(sprite);
                         clickable->on_hover();
                         break;
