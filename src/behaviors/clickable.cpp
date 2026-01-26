@@ -1,12 +1,10 @@
 #include "clickable.hpp"
 
-Clickable::Clickable(SDL_FRect box) {
-        click_box = {
-                box.x,
-                box.y,
-                box.w,
-                box.h
-        };
+Clickable::Clickable() {
+}
+
+void Clickable::set_click_box(SDL_FRect box) {
+        this->click_box = box;
 }
 
 void Clickable::on_hover() {}

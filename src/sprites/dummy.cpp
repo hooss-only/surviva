@@ -2,8 +2,9 @@
 
 #include "../assets/texture.hpp"
 
-Dummy::Dummy() : Entity(), Clickable({0, 0, 16*4, 16*4}) {
+Dummy::Dummy() : Entity(), Clickable() {
         this->texture->set_texture(use_texture("assets/dummy.png"));
+        set_click_box({0, 0, 64, 64});
 }
 
 void Dummy::on_hover() {

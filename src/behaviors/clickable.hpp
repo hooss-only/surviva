@@ -4,8 +4,10 @@
 
 class Clickable {
         public:
-                Clickable(SDL_FRect box);
+                Clickable();
                 ~Clickable() = default;
+
+                void set_click_box(SDL_FRect box);
 
                 virtual void on_hover();
                 virtual void on_click();
