@@ -56,7 +56,8 @@ void Scene::process_hovering() {
 
                         set_cursor_hovering(sprite);
                         clickable->on_hover();
-                        break;
+                        return;
                 }
         }
+        set_cursor_hovering(nullptr);
 }
