@@ -34,6 +34,8 @@ void Player::move(double dt) {
         int speed = this->speed;
         if (horizontal * vertical) speed /= 1.414;
 
+        if (key[SDL_SCANCODE_LSHIFT]) speed /= 2;
+
         this->velocity.x = speed * horizontal * dt;
         this->velocity.y = speed * vertical * dt;
 }
