@@ -23,3 +23,8 @@ void Sprite::set_should_delete(bool value) {
 SDL_FPoint Sprite::get_position() {
         return { this->position.x, this->position.y };
 }
+
+void Sprite::set_position(float x, float y) {
+        this->position.x = x;
+        this->position.y = y;
+}

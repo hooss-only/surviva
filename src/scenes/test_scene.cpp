@@ -5,5 +5,8 @@
 
 TestScene::TestScene() {
         this->add_sprite(new Player());
-        this->add_sprite(new Dummy());
+
+        Dummy* d = new Dummy();
+        d->set_position(100, 100);
+        this->add_sprite(d);
 }

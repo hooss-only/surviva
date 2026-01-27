@@ -16,6 +16,7 @@ class Sprite {
                 bool get_should_delete();
 
                 SDL_FPoint get_position();
+                void set_position(float x, float y);
 
         protected:
                 SDL_FPoint position;
