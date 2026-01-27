@@ -11,5 +11,8 @@ class TopView : public Scene {
                 void render() override;
 
         private:
+                void check_collision();
                 void order_sprites();
+
+                void render_debug();
 };

@@ -2,12 +2,15 @@
 
 #include "entity.hpp"
 #include "../behaviors/clickable.hpp"
+#include "../behaviors/collidable.hpp"
 
-class Dummy : public Entity, public Clickable {
+class Dummy : public Entity, public Clickable, public Collidable {
         public:
                 Dummy();
                 ~Dummy() = default;
 
                 void on_hover() override;
                 void on_click(Uint8 button) override;
+
+                void on_collide() override;
 };
