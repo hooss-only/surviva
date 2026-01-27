@@ -49,8 +49,8 @@ void TopView::render_debug() {
 void TopView::order_sprites() {
         std::sort(this->sprites.begin(), this->sprites.end(),
                 [](Sprite* a, Sprite* b) {
-                        return a->get_position().y
-                                < b->get_position().y;
+                        return a->get_position().y + a->get_scale().y
+                                < b->get_position().y + b->get_scale().y;
                 }
         );
 }

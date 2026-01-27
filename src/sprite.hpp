@@ -18,6 +18,8 @@ class Sprite {
                 SDL_FPoint& get_position();
                 void set_position(float x, float y);
 
+                SDL_FPoint get_scale();
+
         protected:
                 SDL_FPoint position;
                 bool should_delete;

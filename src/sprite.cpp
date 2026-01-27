@@ -28,3 +28,7 @@ void Sprite::set_position(float x, float y) {
         this->position.x = x;
         this->position.y = y;
 }
+
+SDL_FPoint Sprite::get_scale() {
+        return this->texture->get_scale();
+}
