@@ -11,4 +11,9 @@ class Player : public Entity {
 
         private:
                 void move(double dt);
+                void animate();
+        
+                int ticks;
+
+                Uint32 flipflop = 0;
 };
