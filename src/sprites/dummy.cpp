@@ -5,7 +5,7 @@
 
 Dummy::Dummy() : 
         Entity(), 
-        Clickable({0, 0, 16, 16}, &this->position), 
+        Clickable({0, 0, 10, 16}, &this->position), 
         Collidable({0, 13, 10, 3}, &this->position) 
 {
         this->texture->set_texture(use_texture("assets/dummy.png"));
