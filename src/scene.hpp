@@ -6,7 +6,7 @@
 
 class Scene {
         public:
-                Scene();
+                Scene() = default;
                 virtual ~Scene();
                 
                 virtual void handle_event(SDL_Event& event);

@@ -3,9 +3,6 @@
 #include "behaviors/clickable.hpp"
 #include "cursor.hpp"
 
-Scene::Scene() {
-}
-
 Scene::~Scene() {
         for (Sprite* sprite: this->sprites) {
                 delete sprite;
