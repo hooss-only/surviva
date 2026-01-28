@@ -31,6 +31,14 @@ Scene* get_scene() {
         return game_status.current_scene;
 }
 
+void set_player(Player* player) {
+        game_status.player = player;
+}
+
+Player* get_player() {
+        return game_status.player;
+}
+
 void set_sprite_scale(int scale) {
         game_status.scale = scale;
 }

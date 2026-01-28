@@ -4,12 +4,14 @@
 #include <stdbool.h>
 
 #include "scene.hpp"
+#include "sprites/player.hpp"
 
 typedef struct {
         SDL_Window* window;
         SDL_Renderer* renderer;
 
         Scene* current_scene;
+        Player* player;
 
         int scale;
 
@@ -26,6 +28,9 @@ SDL_Renderer* get_renderer();
 void set_scene(Scene* scene);
 void change_scene(Scene* scene);
 Scene* get_scene();
+
+void set_player(Player* player);
+Player* get_player();
 
 void set_sprite_scale(int scale);
 int get_sprite_scale();

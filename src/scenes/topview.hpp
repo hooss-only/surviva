@@ -15,4 +15,5 @@ class TopView : public Scene {
                 void order_sprites();
 
                 void render_debug();
+
 };
