@@ -2,9 +2,11 @@
 
 #include <SDL3/SDL.h>
 
+#include "../sprites/entity.hpp"
+
 class Collidable {
         public:
-                Collidable(SDL_FRect box, const SDL_FPoint* follow);
+                Collidable(SDL_FRect box, Entity* owner);
                 ~Collidable() = default;
 
                 virtual void on_collide();
@@ -14,5 +16,5 @@ class Collidable {
 
         private:
                 SDL_FRect box;
-                const SDL_FPoint* follow;
+                Entity* owner;
 };

@@ -15,13 +15,15 @@ class Sprite {
                 void set_should_delete(bool value);
                 bool get_should_delete();
 
-                SDL_FPoint& get_position();
+                SDL_FPoint get_position();
                 void set_position(float x, float y);
 
                 SDL_FPoint get_scale();
 
         protected:
                 SDL_FPoint position;
+                SDL_FPoint offset;
+
                 bool should_delete;
 
                 std::unique_ptr<TextureComponent> texture;

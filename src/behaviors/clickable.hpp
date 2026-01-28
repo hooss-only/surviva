@@ -2,9 +2,11 @@
 
 #include <SDL3/SDL.h>
 
+#include "../sprite.hpp"
+
 class Clickable {
         public:
-                Clickable(SDL_FRect box, const SDL_FPoint* follow);
+                Clickable(SDL_FRect box, Sprite* owner);
                 ~Clickable() = default;
 
                 virtual void on_hover();
@@ -16,5 +18,5 @@ class Clickable {
 
         private:
                 SDL_FRect box;
-                const SDL_FPoint* follow;
+                Sprite* owner;
 };

@@ -1,7 +1,10 @@
 #include "sprite.hpp"
 
+#include "game_status.hpp"
+
 Sprite::Sprite() {
         this->position = { 0 };
+        this->offset = { 0 };
         this->should_delete = false;
 }
 
@@ -9,7 +12,11 @@ void Sprite::update(double dt) {
 }
 
 void Sprite::render() {
-        if (texture) texture->render(this->position);
+        SDL_FPoint pos = {
+                this->position.x - this->offset.x * get_sprite_scale(),
+                this->position.y - this->offset.y * get_sprite_scale()
+        };
+        if (texture) texture->render(pos);
 }
 
 bool Sprite::get_should_delete() {
@@ -20,8 +27,11 @@ void Sprite::set_should_delete(bool value) {
         this->should_delete = value;
 }
 
-SDL_FPoint& Sprite::get_position() {
-        return this->position;
+SDL_FPoint Sprite::get_position() {
+        return SDL_FPoint {
+                this->position.x - this->offset.x * get_sprite_scale(),
+                this->position.y - this->offset.y * get_sprite_scale()
+        };
 }
 
 void Sprite::set_position(float x, float y) {

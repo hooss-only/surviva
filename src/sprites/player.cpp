@@ -5,7 +5,7 @@
 #define SPRITE_HEIGHT 16
 #define SPRITE_WIDTH 10
 
-Player::Player() : Entity(), Collidable({0, 13, 10, 3}, &this->position) {
+Player::Player() : Entity(), Collidable({0, 13, 10, 3}, this) {
         this->texture->set_texture(use_texture("assets/player.png"));
 
         this->texture->set_src({ 0, 0, SPRITE_WIDTH, SPRITE_HEIGHT });
