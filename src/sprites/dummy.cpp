@@ -9,6 +9,8 @@ Dummy::Dummy() :
         Collidable({0, 13, 10, 3}, this) 
 {
         this->texture->set_texture(use_texture("assets/dummy.png"));
+
+        this->offset = { 5 , 16 };
 }
 
 void Dummy::on_click(Uint8 button) {

@@ -7,6 +7,8 @@
 
 Player::Player() : Entity(), Collidable({0, 13, 10, 3}, this) {
         this->texture->set_texture(use_texture("assets/player.png"));
+        
+        this->offset = { 5, 16 };
 
         this->texture->set_src({ 0, 0, SPRITE_WIDTH, SPRITE_HEIGHT });
 
