@@ -11,10 +11,10 @@ Sprite::Sprite() {
 void Sprite::update(double dt) {
 }
 
-void Sprite::render() {
+void Sprite::render(SDL_FRect* cam_offset) {
         SDL_FPoint pos = {
-                this->position.x - this->offset.x * get_sprite_scale(),
-                this->position.y - this->offset.y * get_sprite_scale()
+                this->position.x - get_offset().x - cam_offset->x,
+                this->position.y - get_offset().y - cam_offset->y
         };
         if (texture) texture->render(pos);
 }
@@ -33,6 +33,15 @@ SDL_FPoint Sprite::get_offset() {
                 this->offset.y * get_sprite_scale(),
         };
         return offset;
+}
+
+SDL_FPoint Sprite::get_screen_pos() {
+        SDL_FPoint screen_pos = {
+                this->position.x - get_scene()->get_camera().pos.x,
+                this->position.y - get_scene()->get_camera().pos.y
+        };
+
+        return screen_pos;
 }
 
 SDL_FPoint& Sprite::get_position() {

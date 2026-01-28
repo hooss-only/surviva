@@ -28,12 +28,16 @@ void Scene::update(double dt) {
 
 void Scene::render() {
         for (Sprite* sprite: this->sprites) {
-                sprite->render();
+                sprite->render(&camera.pos);
         }
 }
 
 void Scene::add_sprite(Sprite* sprite) {
         this->sprites.push_back(sprite);
+}
+
+struct Camera& Scene::get_camera() {
+        return this->camera;
 }
 
 void Scene::remove_dead_sprites() {

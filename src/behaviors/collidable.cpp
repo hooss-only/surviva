@@ -16,11 +16,11 @@ void Collidable::on_collide() {
 }
 
 SDL_FRect Collidable::get_collide_box() {
-        SDL_FPoint follow = this->owner->get_position();
+        SDL_FPoint screen_pos = this->owner->get_screen_pos();
         SDL_FPoint offset = this->owner->get_offset();
         return SDL_FRect {
-                follow.x - offset.x + this->box.x,
-                follow.y - offset.y + this->box.y,
+                screen_pos.x - offset.x + this->box.x,
+                screen_pos.y - offset.y + this->box.y,
                 this->box.w,
                 this->box.h
         };

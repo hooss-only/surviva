@@ -31,6 +31,13 @@ void TopView::check_collision() {
 }
 
 void TopView::render() {
+        Player* player = get_player();
+        if (player) {
+                this->camera.pos = {
+                        player->get_position().x - 400,
+                        player->get_position().y - 300
+                };
+        }
         Scene::render();
 
         if(get_debug_mode()) this->render_debug();
@@ -51,7 +58,7 @@ void TopView::render_debug() {
                         SDL_RenderRect(get_renderer(), &rect);;
                 }
 
-                SDL_FPoint p = sprite->get_position();
+                SDL_FPoint p = sprite->get_screen_pos();
                 SDL_SetRenderDrawColor(get_renderer(), 255, 255, 255, 255);
                 SDL_RenderPoint(get_renderer(), p.x, p.y);
         }
@@ -60,8 +67,8 @@ void TopView::render_debug() {
 void TopView::order_sprites() {
         std::sort(this->sprites.begin(), this->sprites.end(),
                 [](Sprite* a, Sprite* b) {
-                        return a->get_position().y + a->get_scale().y
-                                < b->get_position().y + b->get_scale().y;
+                        return a->get_position().y
+                                < b->get_position().y;
                 }
         );
 }

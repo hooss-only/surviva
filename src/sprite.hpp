@@ -11,12 +11,13 @@ class Sprite {
                 virtual ~Sprite() = default;
                 
                 virtual void update(double dt);
-                virtual void render();
+                virtual void render(SDL_FRect* offset);
                 void set_should_delete(bool value);
                 bool get_should_delete();
 
                 SDL_FPoint& get_position();
                 void set_position(float x, float y);
+                SDL_FPoint get_screen_pos();
 
                 SDL_FPoint get_offset();
 
